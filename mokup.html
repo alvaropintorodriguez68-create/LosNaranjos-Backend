@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup Sistema de Gestión - Los Naranjos</title>
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0A1128 0%, #1C2541 100%);
+            --card-bg: #253254;
+            --text-main: #FFFFFF;
+            --text-muted: #A0AEC0;
+            --accent-cyan: #00B4D8;
+            --accent-yellow: #FFD166;
+            --state-cobre: #D97706;
+            --border-color: #3A4B7C;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #0A1128;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-placeholder {
+            width: 45px;
+            height: 45px;
+            background-color: var(--accent-yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0A1128;
+            font-weight: bold;
+            font-size: 11px;
+            text-align: center;
+            line-height: 1;
+        }
+
+        .brand-info h1 {
+            font-size: 18px;
+            color: var(--text-main);
+        }
+
+        .brand-info p {
+            font-size: 12px;
+            color: var(--accent-cyan);
+        }
+
+        .user-status {
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .main-container {
+            display: flex;
+            flex: 1;
+            height: calc(100vh - 79px);
+        }
+
+        nav {
+            width: 260px;
+            background-color: rgba(10, 17, 40, 0.6);
+            border-right: 1px solid var(--border-color);
+            padding: 20px 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        nav h3 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            padding-left: 10px;
+            margin-bottom: 10px;
+        }
+        .nav-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 12px 15px;
+            text-align: left;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn:hover {
+            background-color: rgba(255,255,255,0.05);
+            color: var(--text-main);
+        }
+
+        .nav-btn.active {
+            background-color: var(--accent-cyan);
+            color: #0A1128;
+            font-weight: bold;
+        }
+
+        .workspace {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .mockup-screen {
+            display: none;
+        }
+
+        .mockup-screen.active {
+            display: block;
+        }
+
+        .screen-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .split-view {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .btn-action {
+            display: block;
+            width: 100%;
+            background-color: var(--accent-cyan);
+            color: #0A1128;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            font-size: 15px;
+            margin-top: 15px;
+        }
+
+        .btn-action:hover {
+            filter: brightness(1.1);
+        }
+
+        .mesa-card {
+            text-align: center;
+            padding: 35px 20px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .mesa-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .mesa-card.libre { border-left: 6px solid var(--accent-cyan); }
+        .mesa-card.ocupada { border-left: 6px solid var(--state-cobre); }
+        .mesa-card.cuenta { border-left: 6px solid var(--accent-yellow); }
+
+        .mesa-card h4 { font-size: 24px; margin-bottom: 5px; }
+        .status-tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .libre .status-tag { background-color: rgba(0,180,216,0.2); color: var(--accent-cyan); }
+        .ocupada .status-tag { background-color: rgba(217,119,6,0.2); color: var(--state-cobre); }
+        .cuenta .status-tag { background-color: rgba(255,209,102,0.2); color: var(--accent-yellow); }
+
+        .comanda-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .comanda-item {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .comanda-item .nota {
+            font-size: 12px;
+            color: var(--accent-yellow);
+            display: block;
+            margin-top: 4px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .menu-btn {
+            background-color: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .menu-btn:hover {
+            background-color: rgba(255,255,255,0.1);
+            border-color: var(--accent-cyan);
+        }
+
+        .anulacion-box {
+            background-color: rgba(239, 68, 68, 0.1);
+            border: 1px dashed #EF4444;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 13px;
+        }
+
+        .kds-card { background-color: #111827; }
+        .kds-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .kds-timer { color: var(--accent-yellow); font-weight: bold; }
+
+        .total-box {
+            background-color: rgba(0,0,0,0.2);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+        }
+        .total-val {
+            font-size: 36px;
+            color: var(--accent-yellow);
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .pay-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .pay-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .pay-btn:hover {
+            background-color: rgba(255,255,255,0.05);
+            border-color: var(--accent-cyan);
+        }
+
+        .kpi-card { text-align: center; padding: 30px; }
+        .kpi-title { font-size: 13px; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px; margin-bottom: 10px; }
+        .kpi-value { font-size: 42px; font-weight: bold; color: var(--text-main); }
+        .kpi-value.highlight { color: var(--accent-yellow); }
+        .kpi-value.alert { color: #EF4444; }
+
+        .table-products { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .table-products th, .table-products td { padding: 14px; text-align: left; border-bottom: 1px solid var(--border-color); }
+        .table-products th { background-color: rgba(0,0,0,0.2); color: var(--text-muted); font-size: 13px; text-transform: uppercase; }
+        .switch-panic { padding: 6px 12px; border-radius: 6px; font-weight: bold; font-size: 12px; border: none; cursor: pointer; }
+        .switch-panic.disponible { background-color: #10B981; color: white; }
+        .switch-panic.agotado { background-color: #EF4444; color: white; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-area">
+            <div class="logo-placeholder">LOS<br>NARANJOS</div>
+            <div class="brand-info">
+                <h1>Comida Casera Los Naranjos</h1>
+                <p>Ciclo Operacional Conectado • MVP v1.0</p>
+            </div>
+        </div>
+        <div class="user-status">
+            <strong>Usuario Activo:</strong> Juan Pérez | <span style="color: var(--accent-yellow);">Sucursal Providencia</span>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- Barra de Navegación Lateral -->
+        <nav>
+            <h3>Flujo de Atención</h3>
+            <button class="nav-btn active" onclick="switchScreen('salon')">3. Mapa de Mesas</button>
+            <button class="nav-btn" onclick="switchScreen('pedido')">4. Toma de Pedido</button>
+            <button class="nav-btn" onclick="switchScreen('cocina')">5. Cocina / KDS</button>
+            <button class="nav-btn" onclick="switchScreen('remotos')">6. Coordinador Remoto</button>
+            <button class="nav-btn" onclick="switchScreen('caja')">8. Caja y Cierre</button>
+            <h3 style="margin-top: 20px;">Administración</h3>
+            <button class="nav-btn" onclick="switchScreen('dueno')">9. Panel del Dueño</button>
+            <button class="nav-btn" onclick="switchScreen('productos')">10. Productos y Carta</button>
+        </nav>
+
+        <!-- Espacio de Trabajo Central -->
+        <main class="workspace">
+
+            <!-- PANTALLA 3: MAPA DE MESAS -->
+            <div id="screen-salon" class="mockup-screen active">
+                <div class="screen-title">
+                    <h2>3. Salón / Mapa de Mesas</h2>
+                    <span style="font-size: 14px; color: var(--text-muted)">Haz clic en la Mesa 2 para simular atención</span>
+                </div>
+                <div class="grid-3">
+                    <div class="card mesa-card libre" onclick="switchScreen('pedido')">
+                        <h4>Mesa 1</h4><p>Capacidad: 2 Pax</p><span class="status-tag">Disponible</span>
+                    </div>
+                    <div class="card mesa-card ocupada" onclick="switchScreen('pedido')">
+                        <h4>Mesa 2</h4><p>Capacidad: 4 Pax</p>
+                        <p style="font-size: 13px; color: var(--text-muted); margin-top:5px;">Abierta hace 45 min</p>
+                        <span class="status-tag">En Consumo</span>
+                    </div>
+                    <div class="card mesa-card cuenta" onclick="switchScreen('caja')">
+                        <h4>Mesa 3</h4><p>Capacidad: 6 Pax</p>
+                        <p style="font-size: 13px; color: var(--text-muted); margin-top:5px;">Pidieron la cuenta</p>
+                        <span class="status-tag">Por Cobrar</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANTALLA 4: TOMA DE PEDIDO -->
+            <div id="screen-pedido" class="mockup-screen">
+                <div class="screen-title">
+                    <h2>4. Detalle de Mesa / Toma de Pedido</h2>
+                    <span style="font-size: 14px; color: var(--accent-yellow)">Editando: Mesa 2</span>
+                </div>
+                <div class="split-view">
+                    <div class="card">
+                        <h3 style="margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 5px;">Comanda Actual</h3>
+                        <ul class="comanda-list">
+                            <li class="comanda-item">
+                                <div><strong>1x Pastel de Choclo en Greda</strong><span class="nota">👇 Nota: Bien tostado</span></div>
+                                <span>$8.900</span>
+                            </li>
+                            <li class="comanda-item"><div><strong>1x Plateada con Puré Picante</strong></div><span>$9.200</span></li>
+                            <li class="comanda-item"><div><strong>2x Bebida Express 350cc</strong></div><span>$3.600</span></li>
+                        </ul>
+                        <div class="anulacion-box">
+                            <strong style="color: #EF4444;">⚠️ Historial de Cambios:</strong><br>
+                            1x Empanada de Pino - Cancelado por Juan P.<br>
+                            <span style="color: var(--text-muted);">Motivo: Error de digitación.</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div style="display:flex; gap:15px; border-bottom: 1px solid var(--border-color); padding-bottom:10px;">
+                            <span style="color:var(--accent-cyan); font-weight:bold; border-bottom: 2px solid var(--accent-cyan);">[ Fondos ]</span>
+                            <span style="color:var(--text-muted)">[ Bebidas ]</span><span style="color:var(--text-muted)">[ Postres ]</span>
+                        </div>
+                        <div class="menu-grid">
+                            <button class="menu-btn">🍲 Cazuela Vacuno</button>
+                            <button class="menu-btn" style="border-color: var(--accent-cyan);">🌽 Pastel Choclo</button>
+                            <button class="menu-btn">🫘 Porotos Rienda</button>
+                            <button class="menu-btn">🥩 Asado de Tira</button>
+                        </div>
+                        <button class="btn-action" onclick="switchScreen('cocina')">ENVIAR PEDIDO A COCINA</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANTALLA 5: KDS COCINA -->
+            <div id="screen-cocina" class="mockup-screen">
+                <div class="screen-title"><h2>5. Cocina / KDS (Kitchen Display System)</h2></div>
+                <div class="grid-3">
+                    <div class="card kds-card">
+                        <div class="kds-header"><h3>MESA 2</h3><span class="kds-timer">12 min</span></div>
+                        <ul class="comanda-list" style="margin-bottom: 20px;">
+                            <li style="margin-bottom: 10px;">• 1x Pastel de Choclo <br><span style="color: #EF4444; font-weight:bold;">¡BIEN TOSTADO!</span></li>
+                            <li>• 1x Plateada con Puré</li>
+                        </ul>
+                        <button class="btn-action" style="background-color: #10B981; color: white;" onclick="alert('Pedido despachado a entrega')">LISTO</button>
+                    </div>
+                    <div class="card kds-card" style="border-color: #10B981;">
+                        <div class="kds-header"><h3 style="color: #10B981;">WHATSAPP (#104)</h3><span class="kds-timer" style="color:#EF4444;">22 min ⚠️</span></div>
+                        <ul class="comanda-list" style="margin-bottom: 20px;">
+                            <li style="margin-bottom: 10px;">• 2x Cazuela de Vacuno</li><li>• 1x Porotos con Rienda</li>
+                        </ul>
+                        <span style="font-size: 11px; color: var(--text-muted); display:block;">Origen: Central Providencia</span>
+                        <button class="btn-action" style="background-color: #10B981; color: white;" onclick="alert('Pedido Remoto Despachado')">LISTO</button>
+                    </div>
+                </div>
+            </div>
+            <!-- PANTALLA 6: COORDINADOR REMOTO -->
+            <div id="screen-remotos" class="mockup-screen">
+                <div class="screen-title"><h2>6. Pedidos Remotos / Coordinador (WhatsApp)</h2></div>
+                <div class="split-view">
+                    <div class="card">
+                        <h3 style="margin-bottom: 15px;">Canales Externos</h3>
+                        <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid #10B981; padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                            <div style="display:flex; justify-content:space-between;">
+                                <strong>Carlos Muñoz (WhatsApp)</strong>
+                                <span style="color: #10B981; font-weight:bold; font-size:12px;">NUEVO</span>
+                            </div>
+                            <p style="font-size: 13px; color: var(--text-muted); margin-top: 5px;">Esperando confirmación operativa</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3 style="margin-bottom: 15px; color: var(--accent-cyan)">Ingreso al Flujo Unificado</h3>
+                        <div style="display:flex; flex-direction:column; gap: 12px;">
+                            <div>
+                                <label style="font-size:11px; color: var(--text-muted)">Cliente</label>
+                                <input type="text" value="Carlos Muñoz" style="width:100%; padding:10px; background:#1C2541; border:1px solid var(--border-color); color:white; border-radius:6px;" readonly>
+                            </div>
+                            <div style="background-color: rgba(0,0,0,0.1); padding: 10px; border-radius:6px; border-left: 3px solid var(--accent-yellow);">
+                                <span style="font-size:13px;">🛒 1x Costillar de Cerdo con Papas Doradas</span>
+                            </div>
+                        </div>
+                        <button class="btn-action" onclick="switchScreen('cocina')">INYECTAR A CICLO OPERACIONAL</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANTALLA 8: CAJA -->
+            <div id="screen-caja" class="mockup-screen">
+                <div class="screen-title"><h2>8. Caja / Cobro y Cierre de Venta</h2></div>
+                <div class="split-view">
+                    <div class="card">
+                        <h3 style="margin-bottom: 15px;">Cuenta Mesa 2</h3>
+                        <ul class="comanda-list">
+                            <li class="comanda-item"><span>1x Pastel de Choclo</span> <span>$8.900</span></li>
+                            <li class="comanda-item"><span>1x Plateada con Puré</span> <span>$9.200</span></li>
+                        </ul>
+                        <div class="total-box">
+                            <span>TOTAL NETO + PROPINA (10%)</span>
+                            <div class="total-val">$19.910</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3 style="margin-bottom: 15px;">Medios de Pago</h3>
+                        <div class="pay-methods">
+                            <button class="pay-btn" style="border-color: var(--accent-cyan); background: rgba(0,180,216,0.05);">💳 Tarjeta Débito / Crédito</button>
+                            <button class="pay-btn">💵 Efectivo</button>
+                        </div>
+                        <button class="btn-action" style="background-color: var(--accent-yellow);" onclick="alert('Pago Procesado. Mesa liberada.')">CERRAR VENTA Y ATENCIÓN</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANTALLA 9: PANEL DEL DUEÑO -->
+            <div id="screen-dueno" class="mockup-screen">
+                <div class="screen-title">
+                    <h2>9. Panel del Dueño / Administración</h2>
+                </div>
+                <div class="grid-2">
+                    <div class="card kpi-card">
+                        <div class="kpi-title">Ventas del Día</div>
+                        <div class="kpi-value highlight">$645.000</div>
+                    </div>
+                    <div class="card kpi-card">
+                        <div class="kpi-title">Pedidos Activos en Curso</div>
+                        <div class="kpi-value">14</div>
+                    </div>
+                </div>
+                <button class="btn-action" style="background: transparent; border: 2px solid var(--accent-cyan); color: var(--accent-cyan); margin-top: 30px;">VER REPORTES AVANZADOS ➔</button>
+            </div>
+
+            <!-- PANTALLA 10: PRODUCTOS Y CARTA -->
+            <div id="screen-productos" class="mockup-screen">
+                <div class="screen-title"><h2>10. Gestión de Productos y Carta</h2></div>
+                <div class="card">
+                    <h3>Quiebres de Stock ("Interruptor de Pánico")</h3>
+                    <table class="table-products">
+                        <thead>
+                            <tr><th>Producto</th><th>Precio</th><th>Estado Operativo</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Pastel de Choclo en Greda</td><td>$8.900</td>
+                                <td><button class="switch-panic disponible">🟢 DISPONIBLE</button></td>
+                            </tr>
+                            <tr>
+                                <td>Plateada con Puré Picante</td><td>$9.200</td>
+                                <td><button class="switch-panic agotado" onclick="alert('Cambiado a Disponible')">🔴 AGOTADO</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Script de Navegación del Entorno -->
+    <script>
+        function switchScreen(screenId) {
+            const screens = document.querySelectorAll('.mockup-screen');
+            screens.forEach(screen => screen.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById('screen-' + screenId).classList.add('active');
+
+            const targetBtn = Array.from(buttons).find(btn => btn.getAttribute('onclick').includes(screenId));
+            if (targetBtn) targetBtn.classList.add('active');
+        }
+    </script>
+</body>
+</html>

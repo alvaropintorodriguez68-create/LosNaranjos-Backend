@@ -1,0 +1,339 @@
+2026-08-25 11:45:56,979 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 11:46:13,705 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 11:46:19,780 | INFO | SEGURIDAD | Acceso concedido. Usuario 'admin' inició sesión. JWT firmado con éxito.
+2026-08-25 11:46:19,784 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 11:46:39,478 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 11:46:39,685 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 11:46:55,161 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 11:46:56,425 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 11:51:05,991 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 11:51:12,879 | INFO | SEGURIDAD | Acceso concedido. Usuario 'admin' inició sesión. JWT firmado con éxito.
+2026-08-25 11:51:12,883 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 12:09:26,442 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 12:09:26,641 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 12:09:26,796 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 12:09:27,005 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 12:09:28,339 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 12:09:28,514 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 12:09:28,738 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 12:09:41,461 | INFO | SEGURIDAD | Acceso concedido. Usuario 'admin' inició sesión. JWT firmado con éxito.
+2026-08-25 12:09:41,467 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 12:30:42,342 | WARNING | AUTENTICACIÓN fallida | Intento de login con usuario inexistente: 'admin'.
+2026-08-25 12:31:44,439 | INFO | SEGURIDAD | Nuevo usuario registrado exitosamente en el sistema: 'admin'.
+2026-08-25 12:32:10,126 | INFO | SEGURIDAD | Acceso concedido. Usuario 'admin' inició sesión. JWT firmado con éxito.
+2026-08-25 12:32:43,755 | INFO | SEGURIDAD | Acceso concedido. Usuario 'admin' inició sesión. JWT firmado con éxito.
+2026-08-25 12:32:43,761 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 12:33:03,047 | INFO | OPERACIÓN exitosa | Usuario: 'admin' creó el producto 'Producto 1' con precio neto de $1000.0.
+2026-08-25 12:33:03,054 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 12:33:14,076 | INFO | OPERACIÓN exitosa | Usuario: 'admin' creó el producto 'Producto 2' con precio neto de $2000.0.
+2026-08-25 12:33:14,080 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 12:38:32,863 | INFO | SEGURIDAD | Acceso concedido. Usuario 'admin' inició sesión. JWT firmado con éxito.
+2026-08-25 12:38:32,871 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 12:38:49,947 | INFO | OPERACIÓN exitosa | Usuario: 'admin' creó el producto 'Producto 3' con precio neto de $3000.0.
+2026-08-25 12:38:49,953 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 12:38:57,040 | INFO | OPERACIÓN exitosa | Usuario: 'admin' creó el producto 'Producto 4' con precio neto de $4000.0.
+2026-08-25 12:38:57,044 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 12:51:22,024 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 12:51:46,137 | INFO | OPERACIÓN de baja lógica | Usuario: 'admin' desactivó el producto con ID: 4.
+2026-08-25 12:51:46,141 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 12:59:54,012 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 12:59:55,244 | INFO | REPORTE GENERAL | Usuario: 'admin' exportó la auditoría completa de productos a CSV corporativo.
+2026-08-25 13:09:06,927 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 13:09:06,941 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 15.01ms
+2026-08-25 13:09:19,604 | WARNING | SEGURIDAD | Se rechazó una petición de API: El token JWT ha expirado.
+2026-08-25 13:09:19,604 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/productos | Código Estado: 401 | Latencia: 1.52ms
+2026-08-25 13:09:30,456 | INFO | SEGURIDAD | Acceso concedido. Usuario 'admin' inició sesión. JWT firmado con éxito.
+2026-08-25 13:09:30,456 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/auth/login | Código Estado: 200 | Latencia: 7.07ms
+2026-08-25 13:09:30,463 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 13:09:30,472 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 10.26ms
+2026-08-25 13:11:21,209 | INFO | OPERACIÓN exitosa | Usuario: 'admin' creó el producto 'Producto 5' con precio neto de $5000.0.
+2026-08-25 13:11:21,209 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/productos | Código Estado: 200 | Latencia: 7.99ms
+2026-08-25 13:11:21,213 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 13:11:21,217 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 4.94ms
+2026-08-25 13:12:08,419 | INFO | OPERACIÓN de baja lógica | Usuario: 'admin' desactivó el producto con ID: 2.
+2026-08-25 13:12:08,419 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: DELETE /api/productos/2 | Código Estado: 200 | Latencia: 10.62ms
+2026-08-25 13:12:08,423 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 13:12:08,425 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 2.52ms
+2026-08-25 13:21:53,336 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /.well-known/appspecific/com.chrome.devtools.json | Código Estado: 404 | Latencia: 0.68ms
+2026-08-25 13:23:13,858 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 13:23:13,866 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 9.50ms
+2026-08-25 13:23:22,266 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 13:23:22,269 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 2.66ms
+2026-08-25 13:23:23,967 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 13:23:23,969 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 3.29ms
+2026-08-25 13:23:26,717 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 13:23:26,719 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 3.11ms
+2026-08-25 13:23:28,483 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 13:23:28,486 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 3.45ms
+2026-08-25 13:23:29,517 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 13:23:29,520 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 3.64ms
+2026-08-25 13:23:41,000 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 13:23:41,003 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 3.29ms
+2026-08-25 13:23:45,397 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 13:23:45,401 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 4.05ms
+2026-08-25 13:23:47,833 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 13:23:47,837 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 4.18ms
+2026-08-25 13:24:10,817 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 13:24:10,821 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 5.67ms
+2026-08-25 13:24:47,699 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 13:24:47,703 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 4.77ms
+2026-08-25 15:43:06,815 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 15:43:06,830 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 20.91ms
+2026-08-25 15:43:14,997 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 15:43:14,999 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 3.43ms
+2026-08-25 15:43:17,181 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 15:43:17,185 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 5.18ms
+2026-08-25 17:17:25,748 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 17:20:47,343 | WARNING | AUTENTICACIÓN fallida | Usuario inexistente: 'admin'.
+2026-08-25 17:20:47,344 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/auth/login | Código Estado: 400 | Latencia: 30.94ms
+2026-08-25 17:20:53,986 | WARNING | AUTENTICACIÓN fallida | Usuario inexistente: 'admin'.
+2026-08-25 17:20:53,986 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/auth/login | Código Estado: 400 | Latencia: 52.28ms
+2026-08-25 17:21:05,542 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /docs | Código Estado: 200 | Latencia: 0.30ms
+2026-08-25 17:21:05,706 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /openapi.json | Código Estado: 200 | Latencia: 20.00ms
+2026-08-25 17:21:28,808 | INFO | SEGURIDAD | Nuevo usuario registrado: 'admin'.
+2026-08-25 17:21:28,809 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/auth/registrar | Código Estado: 200 | Latencia: 14.58ms
+2026-08-25 17:21:47,742 | INFO | SEGURIDAD | Acceso concedido a 'admin'. JWT firmado con éxito.
+2026-08-25 17:21:47,742 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/auth/login | Código Estado: 200 | Latencia: 4.12ms
+2026-08-25 17:22:25,205 | INFO | SEGURIDAD | Acceso concedido a 'admin'. JWT firmado con éxito.
+2026-08-25 17:22:25,205 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/auth/login | Código Estado: 200 | Latencia: 55.83ms
+2026-08-25 17:22:25,223 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 17:22:45,482 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 17:22:48,333 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 17:28:01,669 | INFO | REPORTE GENERAL | Usuario: 'admin' exportó la auditoría completa a CSV corporativo.
+2026-08-25 17:28:01,672 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos/excel | Código Estado: 200 | Latencia: 42.18ms
+2026-08-25 17:28:11,310 | INFO | REPORTE GENERAL | Usuario: 'admin' exportó la auditoría completa a CSV corporativo.
+2026-08-25 17:28:11,311 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos/excel | Código Estado: 200 | Latencia: 54.79ms
+2026-08-25 17:33:06,662 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 17:33:15,133 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 17:33:18,948 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 17:33:21,382 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 17:33:49,550 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 17:34:53,243 | INFO | SEGURIDAD | Acceso concedido a 'admin'. JWT firmado con éxito.
+2026-08-25 17:34:53,243 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/auth/login | Código Estado: 200 | Latencia: 28.02ms
+2026-08-25 17:34:53,251 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 17:34:55,717 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 17:45:57,457 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: DELETE /api/productos/5 | Código Estado: 400 | Latencia: 32.53ms
+2026-08-25 17:51:52,963 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 17:51:53,155 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 17:51:53,348 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 17:51:55,448 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 17:52:00,171 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: DELETE /api/productos/undefined | Código Estado: 422 | Latencia: 4.63ms
+2026-08-25 18:10:17,635 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 18:10:19,547 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 18:10:21,179 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 18:10:24,248 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 18:10:25,497 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 18:10:28,048 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 18:10:35,665 | WARNING | SEGURIDAD | Se rechazó una petición de API: El token JWT ha expirado.
+2026-08-25 18:10:35,666 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/productos | Código Estado: 401 | Latencia: 2.58ms
+2026-08-25 18:10:43,304 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /docs | Código Estado: 200 | Latencia: 0.33ms
+2026-08-25 18:10:43,472 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /openapi.json | Código Estado: 200 | Latencia: 14.14ms
+2026-08-25 18:11:09,231 | INFO | SEGURIDAD | Acceso concedido a 'admin'. JWT firmado con éxito.
+2026-08-25 18:11:09,231 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/auth/login | Código Estado: 200 | Latencia: 48.37ms
+2026-08-25 18:11:34,663 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 18:11:36,344 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 18:11:38,778 | WARNING | SEGURIDAD | Se rechazó una petición de API: El token JWT ha expirado.
+2026-08-25 18:11:38,779 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/productos | Código Estado: 401 | Latencia: 0.99ms
+2026-08-25 18:11:47,214 | INFO | SEGURIDAD | Acceso concedido a 'admin'. JWT firmado con éxito.
+2026-08-25 18:11:47,215 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/auth/login | Código Estado: 200 | Latencia: 4.75ms
+2026-08-25 18:11:47,220 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 18:11:49,762 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 18:11:51,723 | INFO | OPERACIÓN exitosa | Usuario: 'admin' creó el producto 'Producto 1' con precio de $1000.0.
+2026-08-25 18:11:51,724 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/productos | Código Estado: 200 | Latencia: 12.06ms
+2026-08-25 18:11:51,730 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 18:12:02,716 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/productos | Código Estado: 400 | Latencia: 3.80ms
+2026-08-25 18:12:13,836 | INFO | OPERACIÓN exitosa | Usuario: 'admin' creó el producto 'Producto 10' con precio de $10000.0.
+2026-08-25 18:12:13,837 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/productos | Código Estado: 200 | Latencia: 8.45ms
+2026-08-25 18:12:13,841 | INFO | Consulta masiva de productos ejecutada.
+2026-08-25 18:19:48,377 | INFO | SEGURIDAD | Acceso concedido a 'admin'. JWT firmado con éxito.
+2026-08-25 18:19:48,378 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/auth/login | Código Estado: 200 | Latencia: 29.05ms
+2026-08-25 18:19:48,384 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 18:19:48,446 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 64.16ms
+2026-08-25 18:19:51,396 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 18:19:51,463 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 67.05ms
+2026-08-25 18:19:57,645 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 18:19:57,715 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 71.30ms
+2026-08-25 18:30:57,650 | INFO | REPORTE GENERAL | Usuario: 'admin' exportó la auditoría completa a CSV corporativo.
+2026-08-25 18:30:57,668 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos/excel | Código Estado: 200 | Latencia: 96.71ms
+2026-08-25 19:05:39,349 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 19:05:39,414 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 66.80ms
+2026-08-25 19:05:45,473 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 19:05:45,534 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 62.38ms
+2026-08-25 19:05:52,239 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 19:05:52,310 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 71.91ms
+2026-08-25 19:06:11,756 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 19:06:11,811 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 55.24ms
+2026-08-25 19:06:13,056 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 19:06:13,111 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 55.53ms
+2026-08-25 19:18:13,266 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 19:18:13,341 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 78.20ms
+2026-08-25 19:18:16,053 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 19:18:16,126 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 74.14ms
+2026-08-25 19:18:55,421 | WARNING | SEGURIDAD | Se rechazó una petición de API: El token JWT ha expirado.
+2026-08-25 19:18:55,422 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/clientes | Código Estado: 401 | Latencia: 1.71ms
+2026-08-25 19:19:14,857 | INFO | SEGURIDAD | Acceso concedido a 'admin'. JWT firmado con éxito.
+2026-08-25 19:19:14,858 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/auth/login | Código Estado: 200 | Latencia: 71.19ms
+2026-08-25 19:19:53,591 | INFO | SEGURIDAD | Acceso concedido a 'admin'. JWT firmado con éxito.
+2026-08-25 19:19:53,591 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/auth/login | Código Estado: 200 | Latencia: 4.51ms
+2026-08-25 19:19:53,597 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 19:19:53,656 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 60.28ms
+2026-08-25 19:19:55,853 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 19:19:55,910 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 57.75ms
+2026-08-25 19:41:58,453 | INFO | MANTENCIÓN | Cliente 'Alvaro Pinto Rodriguez' dado de alta exitosamente por admin.
+2026-08-25 19:41:58,453 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/clientes | Código Estado: 201 | Latencia: 35.46ms
+2026-08-25 19:42:01,922 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 19:42:01,927 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 6.43ms
+2026-08-25 20:09:50,446 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:09:50,517 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 75.22ms
+2026-08-25 20:09:57,618 | INFO | SEGURIDAD | Acceso concedido a 'admin'. JWT firmado con éxito.
+2026-08-25 20:09:57,618 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/auth/login | Código Estado: 200 | Latencia: 52.96ms
+2026-08-25 20:09:57,623 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:09:57,683 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 60.99ms
+2026-08-25 20:10:00,370 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:10:00,374 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 6.75ms
+2026-08-25 20:10:00,426 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/clientes | Código Estado: 200 | Latencia: 60.58ms
+2026-08-25 20:10:48,092 | INFO | MANTENCIÓN | Cliente 'Jaquelin Doren Pinto' dado de alta exitosamente por admin.
+2026-08-25 20:10:48,093 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/clientes | Código Estado: 201 | Latencia: 9.55ms
+2026-08-25 20:10:51,173 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:10:51,175 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/clientes | Código Estado: 200 | Latencia: 5.31ms
+2026-08-25 20:10:51,236 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 64.36ms
+2026-08-25 20:11:07,567 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:11:07,638 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 71.57ms
+2026-08-25 20:11:12,066 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:11:12,133 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 67.93ms
+2026-08-25 20:11:22,168 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:11:22,222 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 55.42ms
+2026-08-25 20:11:53,486 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:11:53,553 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/clientes | Código Estado: 200 | Latencia: 68.23ms
+2026-08-25 20:11:53,554 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 70.31ms
+2026-08-25 20:13:37,733 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:13:37,736 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 4.04ms
+2026-08-25 20:14:19,114 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:14:19,119 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 5.95ms
+2026-08-25 20:16:14,316 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:16:14,319 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 3.31ms
+2026-08-25 20:16:34,371 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:16:34,409 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 40.39ms
+2026-08-25 20:17:56,068 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:17:56,071 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 3.86ms
+2026-08-25 20:25:07,595 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:25:07,649 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 55.05ms
+2026-08-25 20:25:10,899 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:25:10,959 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 61.04ms
+2026-08-25 20:25:36,598 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:25:36,688 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 91.06ms
+2026-08-25 20:25:47,165 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:25:47,235 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 71.32ms
+2026-08-25 20:28:56,078 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:28:56,135 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 64.02ms
+2026-08-25 20:28:58,266 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:28:58,332 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 67.10ms
+2026-08-25 20:29:08,836 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:29:08,924 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 90.73ms
+2026-08-25 20:29:49,745 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:29:49,805 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 60.73ms
+2026-08-25 20:29:56,596 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:29:56,663 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 68.65ms
+2026-08-25 20:29:56,670 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/clientes | Código Estado: 200 | Latencia: 75.23ms
+2026-08-25 20:31:14,366 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:31:14,369 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 4.01ms
+2026-08-25 20:31:16,682 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:31:16,686 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 6.11ms
+2026-08-25 20:31:16,688 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/clientes | Código Estado: 200 | Latencia: 6.53ms
+2026-08-25 20:31:37,662 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:31:37,820 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 158.56ms
+2026-08-25 20:31:39,576 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:31:39,636 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 60.85ms
+2026-08-25 20:32:02,834 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:32:02,932 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 98.59ms
+2026-08-25 20:38:52,304 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:38:52,388 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 86.57ms
+2026-08-25 20:38:54,965 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:38:55,033 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 69.61ms
+2026-08-25 20:38:55,039 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/clientes | Código Estado: 200 | Latencia: 75.01ms
+2026-08-25 20:39:05,905 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:39:05,916 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 11.76ms
+2026-08-25 20:39:38,066 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:39:38,131 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 66.42ms
+2026-08-25 20:39:42,215 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:39:42,280 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/clientes | Código Estado: 200 | Latencia: 67.39ms
+2026-08-25 20:39:42,284 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 72.20ms
+2026-08-25 20:39:44,229 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:39:44,288 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 60.19ms
+2026-08-25 20:39:44,296 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/clientes | Código Estado: 200 | Latencia: 68.10ms
+2026-08-25 20:50:55,229 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:50:55,286 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 61.91ms
+2026-08-25 20:51:01,945 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:51:02,003 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 59.34ms
+2026-08-25 20:51:13,431 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/finanzas/credito | Código Estado: 404 | Latencia: 0.28ms
+2026-08-25 20:51:22,654 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/finanzas/credito | Código Estado: 404 | Latencia: 0.25ms
+2026-08-25 20:58:11,071 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:58:11,128 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 59.17ms
+2026-08-25 20:58:13,962 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:58:14,020 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 59.67ms
+2026-08-25 20:58:24,582 | WARNING | SEGURIDAD | Se rechazó una petición de API: El token JWT ha expirado.
+2026-08-25 20:58:24,583 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/finanzas/credito | Código Estado: 401 | Latencia: 2.06ms
+2026-08-25 20:58:40,191 | INFO | SEGURIDAD | Acceso concedido a 'admin'. JWT firmado con éxito.
+2026-08-25 20:58:40,192 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/auth/login | Código Estado: 200 | Latencia: 66.76ms
+2026-08-25 20:59:08,770 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:59:08,859 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 90.29ms
+2026-08-25 20:59:10,797 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:59:10,853 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 57.18ms
+2026-08-25 20:59:18,729 | WARNING | SEGURIDAD | Se rechazó una petición de API: El token JWT ha expirado.
+2026-08-25 20:59:18,729 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/finanzas/credito | Código Estado: 401 | Latencia: 1.03ms
+2026-08-25 20:59:29,947 | INFO | SEGURIDAD | Acceso concedido a 'admin'. JWT firmado con éxito.
+2026-08-25 20:59:29,948 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/auth/login | Código Estado: 200 | Latencia: 52.99ms
+2026-08-25 20:59:29,952 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:59:30,107 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 155.00ms
+2026-08-25 20:59:33,094 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:59:33,106 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/clientes | Código Estado: 200 | Latencia: 11.36ms
+2026-08-25 20:59:33,162 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 68.69ms
+2026-08-25 20:59:35,293 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-25 20:59:35,297 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 4.59ms
+2026-08-25 20:59:38,318 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/finanzas/credito | Código Estado: 422 | Latencia: 7.28ms
+2026-08-25 20:59:47,605 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/finanzas/credito | Código Estado: 422 | Latencia: 1.16ms
+2026-08-26 12:25:15,879 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-26 12:25:16,077 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 206.52ms
+2026-08-26 12:26:35,239 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-26 12:26:35,335 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 98.19ms
+2026-08-26 12:26:46,236 | WARNING | SEGURIDAD | Se rechazó una petición de API: El token JWT ha expirado.
+2026-08-26 12:26:46,237 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/productos | Código Estado: 401 | Latencia: 4.80ms
+2026-08-26 12:26:58,485 | WARNING | SEGURIDAD | Se rechazó una petición de API: El token JWT ha expirado.
+2026-08-26 12:26:58,486 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/productos | Código Estado: 401 | Latencia: 1.41ms
+2026-08-26 12:27:04,166 | INFO | SEGURIDAD | Acceso concedido a 'admin'. JWT firmado con éxito.
+2026-08-26 12:27:04,167 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/auth/login | Código Estado: 200 | Latencia: 81.92ms
+2026-08-26 12:27:04,174 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-26 12:27:04,177 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 4.35ms
+2026-08-26 12:27:07,566 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-26 12:27:07,635 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 69.69ms
+2026-08-26 12:27:28,421 | INFO | OPERACIÓN exitosa | Usuario: 'admin' creó el producto 'Producto 11' con precio de $11000.0.
+2026-08-26 12:27:28,422 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/productos | Código Estado: 200 | Latencia: 70.77ms
+2026-08-26 12:27:28,427 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-26 12:27:28,429 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 3.75ms
+2026-08-26 12:27:37,850 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-26 12:27:37,920 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 70.69ms
+2026-08-26 12:27:42,340 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/finanzas/credito | Código Estado: 422 | Latencia: 5.96ms
+2026-08-26 12:27:46,315 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-26 12:27:46,407 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 93.92ms
+2026-08-26 12:27:46,419 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/clientes | Código Estado: 200 | Latencia: 104.02ms
+2026-08-26 12:28:18,773 | INFO | MANTENCIÓN | Cliente 'Jeannette Troncoso' dado de alta exitosamente por admin.
+2026-08-26 12:28:18,773 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: POST /api/clientes | Código Estado: 201 | Latencia: 75.23ms
+2026-08-26 12:28:21,441 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/clientes | Código Estado: 200 | Latencia: 5.13ms
+2026-08-26 12:28:24,265 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-26 12:28:24,268 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 3.50ms
+2026-08-26 12:28:27,881 | INFO | REPORTE GENERAL | Usuario: 'admin' exportó la auditoría completa a CSV corporativo.
+2026-08-26 12:28:27,884 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos/excel | Código Estado: 200 | Latencia: 9.23ms
+2026-08-26 12:48:58,910 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-26 12:48:58,954 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 45.03ms
+2026-08-26 12:48:59,013 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /favicon.ico | Código Estado: 404 | Latencia: 0.64ms
+2026-08-26 12:49:33,006 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-26 12:49:33,101 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 96.21ms
+2026-08-26 12:49:55,640 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-26 12:49:55,728 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 87.98ms
+2026-08-26 12:50:22,194 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-26 12:50:22,292 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 99.76ms
+2026-08-26 12:50:22,306 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/clientes | Código Estado: 200 | Latencia: 112.56ms
+2026-08-26 12:51:17,073 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-26 12:51:17,077 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 4.26ms
+2026-08-26 15:42:58,850 | INFO | CONEXIÓN POOL | Consulta masiva de productos ejecutada desde el Singleton.
+2026-08-26 15:42:58,970 | INFO | INFRAESTRUCTURA | IP: 127.0.0.1 | Petición: GET /api/productos | Código Estado: 200 | Latencia: 146.94ms
