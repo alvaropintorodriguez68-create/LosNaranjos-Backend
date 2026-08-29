@@ -1,7 +1,11 @@
 #usuarios_dao.py
 # datos/usuarios_dao.py
 from sqlalchemy.orm import Session
-from datos.modelos import UsuarioORM  # Tu modelo mapeado de SQLAlchemy
+#from datos.modelos import UsuarioORM  # Tu modelo mapeado de SQLAlchemy
+
+# Cambia la línea de importación antigua por esta:
+from datos.modelos import UsuarioModelo as UsuarioORM
+
 
 class UsuariosDAO:
     @staticmethod
