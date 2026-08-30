@@ -1,0 +1,1 @@
+set PYTHONPATH=.&& python -m uvicorn presentacion.presentacion:app --reload

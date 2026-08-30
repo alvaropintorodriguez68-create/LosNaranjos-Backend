@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Naranjos - Acceso Operadores</title>
+    <style>
+        :root {
+            --azul-oscuro: #0f172a;
+            --azul-medio: #1e293b;
+            --azul-branding: #2563eb;
+            --blanco-legible: #f8fafc;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--azul-oscuro);
+            color: var(--blanco-legible);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-card {
+            background-color: var(--azul-medio);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            width: 100%;
+            max-width: 400px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #3b82f6;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+        input {
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 6px;
+            border: 1px solid #475569;
+            background-color: var(--azul-oscuro);
+            color: white;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        input:focus {
+            outline: none;
+            border-color: var(--azul-branding);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+        }
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--azul-branding);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-card">
+    <h2>Ecosistema Los Naranjos</h2>
+    <form id="formLogin">
+        <div class="form-group">
+            <label for="username">Usuario Operador</label>
+            <input type="text" id="username" required placeholder="Ej: alvaro_qa">
+        </div>
+        <div class="form-group">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" required placeholder="••••••••">
+        </div>
+        <button type="submit">Ingresar al Sistema</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('formLogin').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const usernameInput = document.getElementById('username').value;
+        const passwordInput = document.getElementById('password').value;
+        
+        // Payload limpio hacia la API de autenticación
+        const datosLogin = {
+            username: usernameInput,
+            password: passwordInput
+        };
+
+        try {
+            console.log("[QA FRONTEND] Despachando intento de acceso...", datosLogin.username);
+            
+            const respuesta = await fetch("http://127.0.0", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(datosLogin)
+            });
+
+            const resultado = await respuesta.json();
+
+            if (respuesta.ok) {
+                console.log("[QA SUCCESS] Autenticado exitosamente:", resultado);
+                alert(`¡Bienvenido! Rol: ${resultado.sesion.rol}`);
+                
+                // Guardamos la sesión en el navegador para el orquestador
+                localStorage.setItem("usuario_naranjos", JSON.stringify(resultado.sesion));
+                
+                // Aquí redirigiremos al siguiente módulo funcional (Ej: comanda_salon.html)
+            } else {
+                console.error("[QA ERROR] Acceso denegado:", resultado.detail);
+                alert(`Error de acceso: ${resultado.detail}`);
+            }
+        } catch (error) {
+            console.error("[QA CRÍTICO] Servidor desconectado:", error);
+            alert("Fallo de infraestructura: Comprueba que el servidor Uvicorn esté encendido.");
+        }
+    });
+</script>
+
+</body>
+</html>

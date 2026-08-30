@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Naranjos - Comanda Salón</title>
+    <style>
+        :root {
+            --azul-oscuro: #0f172a;
+            --azul-medio: #1e293b;
+            --azul-branding: #2563eb;
+            --blanco-legible: #f8fafc;
+            --verde-exito: #10b981;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--azul-oscuro);
+            color: var(--blanco-legible);
+            margin: 0;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        .panel {
+            background-color: var(--azul-medio);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+        }
+        h2 {
+            margin-top: 0;
+            color: #3b82f6;
+            border-bottom: 2px solid #334155;
+            padding-bottom: 0.5rem;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #94a3b8;
+        }
+        select, input, textarea {
+            width: 100%;
+            padding: 0.6rem;
+            border-radius: 6px;
+            border: 1px solid #475569;
+            background-color: var(--azul-oscuro);
+            color: white;
+            box-sizing: border-box;
+        }
+        .grid-productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 0.8rem;
+            overflow-y: auto;
+            max-height: 350px;
+        }
+        .btn-producto {
+            background-color: var(--azul-oscuro);
+            border: 1px solid #334155;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .btn-producto:hover {
+            border-color: var(--azul-branding);
+            background-color: #1e293b;
+        }
+        .tabla-items {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        .tabla-items th, .tabla-items td {
+            text-align: left;
+            padding: 0.5rem;
+            border-bottom: 1px solid #334155;
+        }
+        .btn-enviar {
+            background-color: var(--verde-exito);
+            color: white;
+            border: none;
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: auto;
+        }
+        .btn-enviar:hover {
+            background-color: #059669;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Panel de Selección Izquierdo -->
+    <div class="panel">
+        <h2>Panel de Operación</h2>
+        <div class="form-group">
+            <label for="id_mesa">Seleccionar Mesa</label>
+            <select id="id_mesa">
+                <option value="1">Mesa 1</option>
+                <option value="2">Mesa 2</option>
+                <option value="3">Mesa 3</option>
+                <option value="4">Mesa 4</option>
+            </select>
+        </div>
+
+        <label>Agregar Productos a la Comanda</label>
+        <div class="grid-productos">
+            <!-- Simulamos ítems usando los IDs correlativos de tu Postgres -->
+            <div class="btn-producto" onclick="agregarItem(1, 'Pastel de Choclo', 8500)">
+                <h4>Pastel Choclo</h4>
+                <p>$8.500</p>
+            </div>
+            <div class="btn-producto" onclick="agregarItem(2, 'Empanada de Pino', 2500)">
+                <h4>Empanada Pino</h4>
+                <p>$2.500</p>
+            </div>
+            <div class="btn-producto" onclick="agregarItem(3, 'Bebida 350cc', 1800)">
+                <h4>Bebida 350cc</h4>
+                <p>$1.800</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Panel de Resumen Derecho -->
+    <div class="panel">
+        <h2>Resumen del Pedido</h2>
+        <table class="tabla-items">
+            <thead>
+                <tr>
+                    <th>Cant</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Obs</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTabla">
+                <!-- Se inyecta dinámicamente -->
+            </tbody>
+        </table>
+
+        <button class="btn-enviar" onclick="despacharComandaReal()">Enviar Comanda a Cocina</button>
+    </div>
+
+<script>
+    // Memoria local del frontend para acumular platos
+    let itemsComanda = [];
+
+    function agregarItem(id, nombre, precio) {
+        // Validación QA básica: si ya existe incrementamos cantidad, sino agregamos fila
+        let existente = itemsComanda.find(i => i.id_producto === id);
+        if (existente) {
+            existente.cantidad++;
+        } else {
+            itemsComanda.push({
+                id_producto: id,
+                nombre_producto: nombre,
+                cantidad: 1,
+                precio_unitario: precio,
+                observaciones: ""
+            });
+        }
+        renderizarTabla();
+    }
+
+    function renderizarTabla() {
+        const tabla = document.getElementById("cuerpoTabla");
+        tabla.innerHTML = "";
+        itemsComanda.forEach((item, index) => {
+            tabla.innerHTML += `
+                <tr>
+                    <td>${item.cantidad}</td>
+                    <td>${item.nombre_producto}</td>
+                    <td>$${item.precio_unitario * item.cantidad}</td>
+                    <td><input type="text" placeholder="Notas..." onchange="actualizarNota(${index}, this.value)"></td>
+                </tr>
+            `;
+        });
+    }
+
+    function actualizarNota(index, texto) {
+        itemsComanda[index].observaciones = texto;
+    }
+
+    async function despacharComandaReal() {
+        if (itemsComanda.length === 0) {
+            alert("Error: Debes agregar al menos un producto.");
+            return;
+        }
+
+        const mesaSeleccionada = document.getElementById("id_mesa").value;
+        
+        // Recuperamos el usuario logueado en la ventana anterior desde LocalStorage
+        const sesionActiva = JSON.parse(localStorage.getItem("usuario_naranjos")) || { username: "Anonimo_Mozo" };
+
+        // Estructura JSON universal exacta que espera FastAPI
+        const payloadPedido = {
+            id_mesa: parseInt(mesaSeleccionada),
+            id_cliente_remoto: null,
+            origen: "salon",
+            created_by: sesionActiva.username,
+            pedido_items: itemsComanda
+        };
+
+        try {
+            console.log("[QA FRONTEND] Despachando payload atómico...", payloadPedido);
+            
+            const respuesta = await fetch("http://127.0.0", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(payloadPedido)
+            });
+
+            const resultado = await respuesta.json();
+
+            if (respuesta.ok) {
+                console.log("[QA SUCCESS] ¡Insertado en PostgreSQL!", resultado);
+                alert(`¡Comanda enviada con éxito! ID Pedido Generado: ${resultado.data.id_pedido}`);
+                // Limpiamos pantalla
+                itemsComanda = [];
+                renderizarTabla();
+            } else {
+                console.error("[QA ERROR] Rechazo de la lógica de negocio:", resultado.detail);
+                alert(`Error en validación: ${resultado.detail}`);
+            }
+        } catch (error) {
+            console.error("[QA CRÍTICO] Fallo de conectividad física:", error);
+            alert("Fallo de infraestructura: Comprueba que el servidor Uvicorn esté encendido.");
+        }
+    }
+</script>
+</body>
+</html>
