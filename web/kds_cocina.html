@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Naranjos - Monitor de Cocina KDS</title>
+    <style>
+        :root {
+            --azul-oscuro: #0f172a;
+            --azul-medio: #1e293b;
+            --azul-branding: #2563eb;
+            --blanco-legible: #f8fafc;
+            --naranja-alerta: #f97316;
+            --verde-exito: #10b981;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--azul-oscuro);
+            color: var(--blanco-legible);
+            margin: 0;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+        .header-kds {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #334155;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+        .header-kds h1 {
+            margin: 0;
+            color: var(--naranja-alerta);
+        }
+        .grid-kds {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            align-items: start;
+        }
+        .ticket-card {
+            background-color: var(--azul-medio);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            border-top: 5px solid var(--naranja-alerta);
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+        }
+        .ticket-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            border-bottom: 1px dashed #475569;
+            padding-bottom: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .ticket-origen {
+            font-size: 0.8rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            background-color: #334155;
+            text-transform: uppercase;
+        }
+        .ticket-origen.whatsapp {
+            background-color: #059669;
+        }
+        .ticket-items {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1rem 0;
+            flex-grow: 1;
+        }
+        .ticket-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid #334155;
+        }
+        .observaciones {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            font-style: italic;
+            display: block;
+        }
+        .btn-despachar {
+            background-color: var(--azul-branding);
+            color: white;
+            border: none;
+            padding: 0.6rem;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.2s;
+        }
+        .btn-despachar:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-kds">
+        <h1>Monitor KDS - Cocina</h1>
+        <div id="status-conexion">🔄 Sincronizando con PostgreSQL...</div>
+    </div>
+
+    <!-- Contenedor dinámico de comandas -->
+    <div class="grid-kds" id="contenedorTickets">
+        <!-- Los tickets en preparación se inyectarán aquí -->
+    </div>
+
+<script>
+    const URL_API_PEDIDOS = "http://127.0.0";
+
+    // 1. Polling Automatizado: Consulta la base de datos cada 5 segundos
+    async function consultarPedidosPendientes() {
+        try {
+            const respuesta = await fetch(URL_API_PEDIDOS);
+            const resultado = await respuesta.json();
+            
+            if (respuesta.ok) {
+                document.getElementById("status-conexion").innerText = "🟢 Conectado a Postgres";
+                // Filtramos en el cliente solo los que estén en estado 'Pendiente' o 'Preparando'
+                const pendientes = resultado.filter(p => p.estado !== "Entregado" && p.estado !== "Anulado");
+                renderizarTickets(pendientes);
+            }
+        } catch (error) {
+            console.error("[QA KDS] Error de red:", error);
+            document.getElementById("status-conexion").innerText = "🔴 Servidor Uvicorn Desconectado";
+        }
+    }
+
+    // 2. Renderizar las tarjetas de comanda de forma dinámica
+    function renderizarTickets(pedidos) {
+        const contenedor = document.getElementById("contenedorTickets");
+        contenedor.innerHTML = "";
+
+        if (pedidos.length === 0) {
+            contenedor.innerHTML = `<p style="color: #94a3b8; text-align: center; grid-column: 1/-1;">No hay pedidos pendientes en la cocina. ¡Buen trabajo!</p>`;
+            return;
+        }
+
+        pedidos.forEach(pedido => {
+            const claseOrigen = pedido.canal === 'whatsapp' ? 'whatsapp' : '';
+            let itemsHtml = "";
+            
+            // Recorremos los detalles asociados a la orden
+            if(pedido.detalles) {
+                pedido.detalles.forEach(item => {
+                    itemsHtml += `
+                        <li class="ticket-item">
+                            <div>
+                                <strong>${item.cantidad}x</strong> ${item.producto ? item.producto.nombre : 'Plato'}
+                                <span class="observaciones">${item.observaciones || ''}</span>
+                            </div>
+                        </li>
+                    `;
+                });
+            }
+
+            contenedor.innerHTML += `
+                <div class="ticket-card" id="ticket-${pedido.id_pedido}">
+                    <div class="ticket-header">
+                        <span>Mesa #${pedido.id_mesa || 'Remoto'}</span>
+                        <span class="ticket-origen ${claseOrigen}">${pedido.canal}</span>
+                    </div>
+                    <ul class="ticket-items">
+                        ${itemsHtml}
+                    </ul>
+                    <button class="btn-despachar" onclick="cambiarEstadoPedido(${pedido.id_pedido}, 'Entregado')">
+                        Marcar Listo ✔
+                    </button>
+                </div>
+            `;
+        });
+    }
+
+    // 3. Modificar el estado del pedido de forma asíncrona (PUT / PATCH)
+    async function cambiarEstadoPedido(idPedido, nuevoEstado) {
+        try {
+            console.log(`[QA KDS] Cambiando pedido #${idPedido} a estado: ${nuevoEstado}`);
+            const respuesta = await fetch(`${URL_API_PEDIDOS}/${idPedido}/estado`, {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ estado: nuevoEstado, updated_by: "Pantalla_Cocina" })
+            });
+
+            if (respuesta.ok) {
+                // Remoción visual inmediata antes del siguiente ciclo de polling
+                const elemento = document.getElementById(`ticket-${idPedido}`);
+                if (elemento) elemento.remove();
+                consultarPedidosPendientes();
+            } else {
+                alert("Error al actualizar el estado del ticket en el servidor.");
+            }
+        } catch (error) {
+            console.error("[QA CRÍTICO KDS] Error de red al despachar:", error);
+        }
+    }
+
+    // Iniciar bucle operativo (Monitoreo constante)
+    consultarPedidosPendientes();
+    setInterval(consultarPedidosPendientes, 5000);
+</script>
+</body>
+</html>
